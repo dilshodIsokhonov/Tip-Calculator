@@ -2,6 +2,8 @@
 The app is created by inspiration from Rahul Pandey's "Tippy" and Google developers' "Tip Time" applications!
 I've learnt a lot while creating this app such as night theme, chip widgets, bottom sheet dialog, supporting
 multiple screen sizes by using constraintLayout specifically Guidlines, Supporting multiple locales etc.
+## Screenshots
+![Tip Calculator App](https://user-images.githubusercontent.com/77774459/200439393-f7c8212f-730e-434e-9396-04c17b3dc403.png)
 ## Features
 The app takes three inputs and gives three outputs,
 Inputs: 
