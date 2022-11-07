@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tip Calculator</string>
+    <string name="total_per_person">Всего на человека</string>
+    <string name="bill">счет</string>
+    <string name="tip">чаевые</string>
+    <string name="enter_bill_total">Введите сумму счета</string>
+    <string name="split">Разделить на</string>
+    <string name="choose_tip">Выберите чаевые</string>
+    <string name="custom_tip">Пользов.</string>
+    <string name="enter_custom_tip">Введите пользовательскиe чаевые</string>
+    <string name="custom_tip_percentage">%s</string>
+    <string name="footprint">Создано с <font color="#FF0000">♥</font>︎ к <font color="#145DA0" face="cursive">Android!</font></string>
+    <string name="split_toast_msg">Вы достигли максимальной длины цифр!</string>
+</resources>

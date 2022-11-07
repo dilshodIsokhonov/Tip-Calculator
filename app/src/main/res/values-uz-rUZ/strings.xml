@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Choychaqa hisoblash</string>
+    <string name="total_per_person">Har kishi uchun</string>
+    <string name="bill">hisob</string>
+    <string name="tip">choychaqa</string>
+    <string name="enter_bill_total">Jami hisob miqdori</string>
+    <string name="split">Taqsimlash</string>
+    <string name="choose_tip">Choychaqani tanlash</string>
+    <string name="custom_tip">Shaxsiy</string>
+    <string name="enter_custom_tip">Shaxsiy choychaqa miqdorini kiriting</string>
+    <string name="custom_tip_percentage">%s</string>
+    <string name="footprint">Androidga <font color="#FF0000">♥</font>︎ ila <font color="#145DA0" face="cursive">yaratildi!</font></string>
+    <string name="split_toast_msg">Maksimal belgilar soniga yetdingiz!</string>
+</resources>

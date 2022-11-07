@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tipViewModel"
+            type="com.gmail.isoxonov341.tiptime2.TipViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/cv"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            android:backgroundTint="?attr/colorOnSecondary"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline0.45"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/horizontal_guideline0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <CheckBox
+                    android:id="@+id/round_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/sl_round_up_24dp"
+                    android:visibility="invisible"
+                    app:buttonTint="?attr/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_total"
+                    style="@style/Widget.TipTime2.TextView.Gray"
+                    android:layout_width="match_parent"
+                    android:text="@string/total_per_person"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_total_per_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="12dp"
+                    app:autoSizeTextType="uniform"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@id/cv_guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total"
+                    tools:text="$45.05" />
+
+                <TextView
+                    android:id="@+id/tv_bill"
+                    style="@style/Widget.TipTime2.TextView.Gray"
+                    android:layout_width="0dp"
+                    android:text="@string/bill"
+                    app:layout_constraintEnd_toStartOf="@id/tv_tip"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_guideline" />
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    style="@style/Widget.TipTime2.TextView.Gray"
+                    android:layout_width="0dp"
+                    android:text="@string/tip"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_bill"
+                    app:layout_constraintTop_toBottomOf="@id/cv_guideline" />
+
+                <TextView
+                    android:id="@+id/tv_bill_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:textAlignment="center"
+                    app:autoSizeTextType="uniform"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@id/tv_tip_amount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_bill"
+                    tools:text="$37.54" />
+
+                <TextView
+                    android:id="@+id/tv_tip_amount"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:textAlignment="center"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_bill_amount"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tip"
+                    tools:text="$7.51" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cv_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="132dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:chipSpacingHorizontal="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/option_ten_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:checked="true"
+                android:onClick="@{() -> tipViewModel.setCustomTip(@string/tip_10)}"
+                android:text="@string/tip_10" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/option_fifteen_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{tipViewModel.customTipPercentage.equals(@string/tip_15)}"
+                android:onClick="@{() -> tipViewModel.setCustomTip(@string/tip_15)}"
+                android:text="@string/tip_15" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/option_twenty_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{tipViewModel.customTipPercentage.equals(@string/tip_20)}"
+                android:onClick="@{() -> tipViewModel.setCustomTip(@string/tip_20)}"
+                android:text="@string/tip_20" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/option_custom_percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/custom_tip" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/tv_enter_bill"
+            style="@style/Widget.TipTime2.TextView.Gray"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeTextType="uniform"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/enter_bill_total"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@id/total_bill"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_group" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/total_bill"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:maxWidth="220dp"
+            app:boxBackgroundColor="?attr/colorOnPrimaryContainer"
+            app:layout_constraintBottom_toTopOf="@id/tv_split"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_enter_bill"
+            app:prefixText="$"
+            app:prefixTextAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+            app:suffixTextAppearance="@style/TextAppearance.Material3.HeadlineMedium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/total_bill_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:maxLength="7"
+                android:padding="16dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck,SpeakableTextPresentCheck"
+                tools:text="0.00" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_split"
+            style="@style/Widget.TipTime2.TextView.Gray"
+            android:layout_width="0dp"
+            android:layout_marginTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/split"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@id/btn_plus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_bill" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_minus"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/minus_button"
+            app:icon="@drawable/ic_remove"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_split_value"
+            app:layout_constraintEnd_toStartOf="@+id/tv_split_value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_split_value" />
+
+        <TextView
+            android:id="@+id/tv_split_value"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:autoSizeMaxTextSize="32sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:text="@string/default_split"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+            app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_minus"
+            app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_plus"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/plus_button"
+            app:icon="@drawable/ic_add"
+            app:iconGravity="textStart"
+            app:iconSize="24dp"
+            app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_split_value"
+            app:layout_constraintTop_toBottomOf="@+id/tv_split" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_guideline0.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_guideline0.45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_guideline1.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

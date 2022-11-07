@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.TipTime2.Button" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleLarge</item>
+    </style>
+
+    <style name="Widget.TipTime2.Chip" parent="Widget.Material3.Chip.Suggestion.Elevated">
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="chipCornerRadius">50dp</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="Widget.TipTime2.MaterialButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleLarge</item>
+    </style>
+    <style name="Widget.TipTime2.TextView.Gray" parent="">
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:textAppearance">@style/TextAppearance.Material3.TitleLarge</item>
+        <item name="autoSizeStepGranularity">2sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="autoSizeMaxTextSize">24sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+</resources>

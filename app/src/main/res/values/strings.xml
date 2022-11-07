@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Tip Calculator</string>
+    <string name="total_per_person">Total per person</string>
+    <string name="bill">bill</string>
+    <string name="tip">tip</string>
+    <string name="enter_bill_total">Enter bill total</string>
+    <string name="split">Split</string>
+    <string name="choose_tip">Choose tip</string>
+    <string name="custom_tip">Custom</string>
+    <string name="enter_custom_tip">Enter Custom Tip</string>
+    <string name="custom_tip_percentage">%s</string>
+    <string name="footprint">Created with <font color="#FF0000">♥</font>︎ to <font color="#145DA0" face="cursive">Android!</font></string>
+    <string name="split_toast_msg">You`ve reached maximum length of digits</string>
+
+    <!--  Default values for all string locales  -->
+    <string name="tip_10" translatable="false">10%</string>
+    <string name="tip_15" translatable="false">15%</string>
+    <string name="tip_18" translatable="false">18%</string>
+    <string name="tip_20" translatable="false">20%</string>
+    <string name="tip_25" translatable="false">25%</string>
+    <string name="default_split" translatable="false">3</string>
+    <string name="plus_button" translatable="false">plus</string>
+    <string name="minus_button" translatable="false">minus</string>
+</resources>

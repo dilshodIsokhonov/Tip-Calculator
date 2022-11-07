@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/tipFragment">
+
+    <fragment
+        android:id="@+id/tipFragment"
+        tools:layout="@layout/fragment_tip"
+        android:name="com.gmail.isoxonov341.tiptime2.TipFragment"
+        android:label="Tip Calculator" >
+        <action
+            android:id="@+id/action_tipFragment_to_customTipDialogFragment"
+            app:destination="@id/customTipDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/customTipDialogFragment"
+        android:name="com.gmail.isoxonov341.tiptime2.CustomTipDialogFragment"
+        android:label="CustomTipDialogFragment"
+        tools:layout="@layout/fragment_custom_tip_dialog">
+    </dialog>
+
+</navigation>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/app_bar_design"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+        android:id="@+id/cv"
+        style="@style/Widget.Material3.CardView.Filled"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="24dp"
+        android:backgroundTint="@color/baby_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_total"
+                style="@style/Widget.TipTime2.TextView.Gray"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:text="@string/total_per_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textSize="58sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_total"
+                tools:text="$45.05" />
+
+            <TextView
+                android:id="@+id/tv_bill"
+                style="@style/Widget.TipTime2.TextView.Gray"
+                android:layout_width="0dp"
+                android:text="@string/bill"
+                app:layout_constraintEnd_toStartOf="@id/tv_tip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_guideline" />
+
+            <TextView
+                android:id="@+id/tv_tip"
+                style="@style/Widget.TipTime2.TextView.Gray"
+                android:layout_width="0dp"
+                android:text="@string/tip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_bill"
+                app:layout_constraintTop_toBottomOf="@id/cv_guideline" />
+
+            <TextView
+                android:id="@+id/tv_bill_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toStartOf="@id/tv_tip_amount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_bill"
+                tools:text="$37.54" />
+
+            <TextView
+                android:id="@+id/tv_tip_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_bill_amount"
+                app:layout_constraintTop_toBottomOf="@id/tv_tip"
+                tools:text="$7.51" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cv_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="150dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_enter_bill"
+                style="@style/Widget.TipTime2.TextView.Gray"
+                android:layout_width="0dp"
+                android:layout_marginTop="32sp"
+                android:text="@string/enter_bill_total"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toTopOf="@id/total_bill"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/total_bill"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:maxWidth="200dp"
+                app:boxBackgroundColor="?attr/colorSurface"
+                app:layout_constraintBottom_toTopOf="@id/tv_choose_tip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_enter_bill">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/total_bill_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:padding="16dp"
+                    android:text="$"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+                    android:textColor="?attr/colorPrimary"
+                    tools:ignore="TextContrastCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_choose_tip"
+                style="@style/Widget.TipTime2.TextView.Gray"
+                android:layout_width="0dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/choose_tip"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/total_bill" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btn_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/tv_choose_tip">
+
+                <Button
+                    android:id="@+id/btn15"
+                    style="@style/Widget.TipTime2.Button"
+                    android:layout_marginStart="4dp"
+                    android:onClick="@{() -> viewModel.setTipPercentage(15)}"
+                    android:outlineSpotShadowColor="?attr/colorSecondaryVariant"
+                    android:text="@string/tip_15"
+                    app:layout_constraintBottom_toTopOf="@id/btn25"
+                    app:layout_constraintEnd_toStartOf="@id/btn18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="p" />
+
+                <Button
+                    android:id="@+id/btn18"
+                    style="@style/Widget.TipTime2.Button"
+                    android:layout_marginStart="16dp"
+                    android:onClick="@{() -> viewModel.setTipPercentage(18)}"
+                    android:outlineSpotShadowColor="?attr/colorSecondaryVariant"
+                    android:text="@string/tip_18"
+                    app:layout_constraintBottom_toTopOf="@id/btn_custom_tip"
+                    app:layout_constraintEnd_toStartOf="@id/btn20"
+                    app:layout_constraintStart_toEndOf="@id/btn15"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="p" />
+
+                <Button
+                    android:id="@+id/btn20"
+                    style="@style/Widget.TipTime2.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:elevation="4dp"
+                    android:enabled="true"
+                    android:onClick="@{() -> viewModel.setTipPercentage(20)}"
+                    android:outlineSpotShadowColor="?attr/colorSecondaryVariant"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/tip_20"
+                    android:textSize="@dimen/medium_text"
+                    app:layout_constraintStart_toEndOf="@id/btn18"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:targetApi="p" />
+
+                <Button
+                    android:id="@+id/btn25"
+                    style="@style/Widget.TipTime2.Button"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:onClick="@{() -> viewModel.setTipPercentage(25)}"
+                    android:outlineSpotShadowColor="?attr/colorSecondaryVariant"
+                    android:text="@string/tip_25"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/btn15"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/btn15"
+                    app:layout_constraintTop_toBottomOf="@id/btn15"
+                    tools:targetApi="p" />
+
+                <Button
+                    android:id="@+id/btn_custom_tip"
+                    style="@style/Widget.TipTime2.Button"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:outlineSpotShadowColor="?attr/colorSecondaryVariant"
+                    android:text="@string/custom_tip"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/btn18"
+                    app:layout_constraintTop_toBottomOf="@id/btn18"
+                    tools:targetApi="p" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_split"
+                style="@style/Widget.TipTime2.TextView.Gray"
+                android:layout_width="0dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/split"
+                android:textAlignment="viewStart"
+                app:layout_constraintBottom_toTopOf="@id/btn_plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/btn_container" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_minus"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/minus_button"
+                app:icon="@drawable/ic_remove"
+                app:iconGravity="textStart"
+                app:iconSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_split_value"
+                app:layout_constraintEnd_toStartOf="@+id/tv_split_value"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_split_value" />
+
+            <TextView
+                android:id="@+id/tv_split_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:text="@string/default_split"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="@dimen/medium_text"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_minus"
+                app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_plus"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/plus_button"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                app:iconSize="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_split_value"
+                app:layout_constraintTop_toBottomOf="@+id/tv_split" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="72dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
